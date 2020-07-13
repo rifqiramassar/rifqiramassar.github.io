@@ -35,9 +35,8 @@ function getCompetitions() {
   //   });
   // };
   const newRequest = new Request(
-    "https://api.football-data.org/v2/competitions/", {
+    "${base_url}v2/competitions/", {
       mode: "cors",
-      method: "GET",
       headers: {
         "X-Auth-Token": "ac24cac5ddb64322bfa4193501fbbf63",
       },
@@ -104,7 +103,7 @@ function getStandingsById() {
     var urlParams = new URLSearchParams(window.location.search);
     var idParam = urlParams.get("id");
     const newRequest = new Request(
-      "http://api.football-data.org/v2/competitions/" + idParam + "/standings", {
+      "${base_url}v2/competitions/${idParam}/standings", {
         mode: "cors",
         method: "GET",
         headers: {
